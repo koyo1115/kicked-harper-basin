@@ -32,19 +32,36 @@ st.write("パラメータを設定して実行ボタンを押してください�
 
 st.subheader("パラメータ設定")
 K = st.slider("K", 0.0, 10.0, 2.0)
+K = st.number_input("K（直接入力）", min_value=0.0, max_value=10.0, value=K, step=0.1)
+
 L = st.slider("L", 0.0, 10.0, 2.0)
+L = st.number_input("L（直接入力）", min_value=0.0, max_value=10.0, value=L, step=0.1)
+
 res = st.slider("解像度 (res)", 50, 300, 100)
+res = st.number_input("解像度（直接入力）", min_value=50, max_value=300, value=res, step=10)
+
 max_iter = st.slider("最大反復回数 (max_iter)", 100, 2000, 500)
+max_iter = st.number_input("最大反復回数（直接入力）", min_value=100, max_value=2000, value=max_iter, step=100)
 
 st.subheader("出口1（赤）の設定")
 exit1_x = st.slider("出口1 x座標", 0.0, 2*np.pi, 0.0)
+exit1_x = st.number_input("出口1 x座標（直接入力）", min_value=0.0, max_value=2*np.pi, value=exit1_x, step=0.1)
+
 exit1_p = st.slider("出口1 p座標", 0.0, 2*np.pi, 0.0)
+exit1_p = st.number_input("出口1 p座標（直接入力）", min_value=0.0, max_value=2*np.pi, value=exit1_p, step=0.1)
+
 r1 = st.slider("出口1 半径", 0.1, 1.0, 0.3)
+r1 = st.number_input("出口1 半径（直接入力）", min_value=0.1, max_value=1.0, value=r1, step=0.1)
 
 st.subheader("出口2（青）の設定")
 exit2_x = st.slider("出口2 x座標", 0.0, 2*np.pi, float(np.pi))
+exit2_x = st.number_input("出口2 x座標（直接入力）", min_value=0.0, max_value=2*np.pi, value=exit2_x, step=0.1)
+
 exit2_p = st.slider("出口2 p座標", 0.0, 2*np.pi, float(np.pi))
+exit2_p = st.number_input("出口2 p座標（直接入力）", min_value=0.0, max_value=2*np.pi, value=exit2_p, step=0.1)
+
 r2 = st.slider("出口2 半径", 0.1, 1.0, 0.3)
+r2 = st.number_input("出口2 半径（直接入力）", min_value=0.1, max_value=1.0, value=r2, step=0.1)
 
 if st.button("実行"):
     with st.spinner("計算中..."):
