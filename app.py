@@ -32,8 +32,8 @@ st.title("Kicked Harper Basin")
 K = st.slider("K", 0.0, 10.0, 2.0)
 L = st.slider("L", 0.0, 10.0, 2.0)
 
-res = 100
-max_iter = 500
+res = 1000
+max_iter = 1000
 
 ba = np.zeros((res, res), dtype=int)
 x_range = np.linspace(0, 2*np.pi, res)
